@@ -12,6 +12,7 @@ permissions:
 
 env:
   STEP_2_FILE: ".github/steps/2-step.md"
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   find_exercise:
@@ -54,6 +55,7 @@ jobs:
           comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
           file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
           edit-mode: replace
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       # START: Check practical exercise
 
